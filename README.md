@@ -1,4 +1,4 @@
-# Spot
+# ![](Images/Banner.png)
 
 Simple wrapper around CLLocationManager to make it easy to get the current location of the device.
 
