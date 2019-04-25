@@ -14,7 +14,7 @@ extension LocationHandlerTests {
     func givenSuccessExpectation() {
         let closureExpectation = expectation(description: #function)
         handler.didChangeAuthorizationStatus = { result in
-            expect(result.successResult()).toNot(beNil())
+            expect(try? result.get()).toNot(beNil())
             closureExpectation.fulfill()
         }
     }
@@ -34,7 +34,7 @@ extension LocationHandlerTests {
     func givenExpectationForFailure(with error: LocationPermissionError) {
         let closureExpectation = expectation(description: #function)
         handler.didChangeAuthorizationStatus = { result in
-            expect(result.error()).to(equal(error))
+            expect(result.error).to(equal(error))
             closureExpectation.fulfill()
         }
     }

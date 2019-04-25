@@ -46,7 +46,7 @@ public protocol LocationReporting {
     /// Method to request a users location
     ///
     /// - Parameter completion: Completion including the result of the request
-    func requestLocation(completion: @escaping (LocationResult<CLLocationCoordinate2D, LocationRequestError>) -> Void)
+    func requestLocation(completion: @escaping (Result<CLLocationCoordinate2D, LocationRequestError>) -> Void)
 
     /// Cancel all requests for location
     func cancelRequestingLocation()
@@ -54,7 +54,7 @@ public protocol LocationReporting {
     /// Register to observe authorisation changes
     ///
     /// - Parameter changesHandler: Closure to call when changes happen
-    func observeAuthorizationChanges(changesHandler: @escaping (LocationResult<Void, LocationPermissionError>) -> Void)
+    func observeAuthorizationChanges(changesHandler: @escaping (Result<Void, LocationPermissionError>) -> Void)
 }
 
 /// The operation context to use get a user location
@@ -74,7 +74,7 @@ public class LocationService: LocationReporting {
         self.locationHandler = locationHandler
     }
 
-    public func requestLocation(completion: @escaping (LocationResult<CLLocationCoordinate2D, LocationRequestError>) -> Void) {
+    public func requestLocation(completion: @escaping (Result<CLLocationCoordinate2D, LocationRequestError>) -> Void) {
         locationHandler.requestLocation(completion)
     }
 
@@ -82,7 +82,7 @@ public class LocationService: LocationReporting {
         locationHandler.cancelCurrentRequest()
     }
 
-    public func observeAuthorizationChanges(changesHandler: @escaping (LocationResult<Void, LocationPermissionError>) -> Void) {
+    public func observeAuthorizationChanges(changesHandler: @escaping (Result<Void, LocationPermissionError>) -> Void) {
         locationHandler.didChangeAuthorizationStatus = changesHandler
     }
 }

@@ -46,11 +46,11 @@ extension LocationHandlerTests {
 
     func testLocationRequestReturnsDisabledErrorWhenLocationServicesAreDisabled() {
         MockLocationManager.isLocationServicesEnabled = false
-        var receivedResult: LocationResult<CLLocationCoordinate2D, LocationRequestError>?
+        var receivedResult: Result<CLLocationCoordinate2D, LocationRequestError>?
         handler.requestLocation { result in
             receivedResult = result
         }
-        expect(receivedResult!.error()).to(equal(LocationRequestError.locationDisabled))
+        expect(receivedResult!.error).to(equal(LocationRequestError.locationDisabled))
     }
 
     func testLocationRequestIsInitiatedWhenAuthorizationStatusIsAuthorizedAlways() {
@@ -69,22 +69,22 @@ extension LocationHandlerTests {
 
     func testLocationRequestReportsErrorWhenAuthorizationStatusIsDenied() {
         givenLocationPermissionHasNotBeenRequested()
-        var receivedResult: LocationResult<CLLocationCoordinate2D, LocationRequestError>?
+        var receivedResult: Result<CLLocationCoordinate2D, LocationRequestError>?
         handler.requestLocation { result in
             receivedResult = result
         }
         whenLocationPermissionIsReceived(withStatus: .denied)
-        expect(receivedResult!.error()).to(equal(LocationRequestError.locationDenied))
+        expect(receivedResult!.error).to(equal(LocationRequestError.locationDenied))
     }
 
     func testLocationRequestReportsErrorWhenAuthorizationStatusIsRestricted() {
         givenLocationPermissionHasNotBeenRequested()
-        var receivedResult: LocationResult<CLLocationCoordinate2D, LocationRequestError>?
+        var receivedResult: Result<CLLocationCoordinate2D, LocationRequestError>?
         handler.requestLocation { result in
             receivedResult = result
         }
         whenLocationPermissionIsReceived(withStatus: .restricted)
-        expect(receivedResult!.error()).to(equal(LocationRequestError.locationDenied))
+        expect(receivedResult!.error).to(equal(LocationRequestError.locationDenied))
     }
 }
 
