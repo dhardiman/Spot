@@ -212,27 +212,28 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0820;
-				LastUpgradeCheck = 0930;
+				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = "David Hardiman";
 				TargetAttributes = {
 					4F9DE3D31E365F49009013B4 = {
 						CreatedOnToolsVersion = 8.2.1;
-						LastSwiftMigration = 1000;
+						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 					};
 					4F9DE3DC1E365F49009013B4 = {
 						CreatedOnToolsVersion = 8.2.1;
-						LastSwiftMigration = 1000;
+						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 					};
 				};
 			};
 			buildConfigurationList = 4F9DE3CE1E365F49009013B4 /* Build configuration list for PBXProject "Spot" */;
 			compatibilityVersion = "Xcode 9.3";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 4F9DE3CA1E365F49009013B4;
 			productRefGroup = 4F9DE3D51E365F49009013B4 /* Products */;
@@ -341,6 +342,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -421,7 +423,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_COMPILATION_MODE = singlefile;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Calabash;
 		};
@@ -439,7 +441,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = me.davidhardiman.SpotTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Calabash;
 		};
@@ -447,6 +449,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -509,6 +512,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -583,7 +587,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_COMPILATION_MODE = singlefile;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -607,7 +611,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = me.davidhardiman.SPOT;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -625,7 +629,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = me.davidhardiman.SpotTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -643,7 +647,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = me.davidhardiman.SpotTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
