@@ -12,7 +12,6 @@
 		077B35401F7BA13D0000282F /* LocationHandlerPermissionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFC2D451E3A24F000080DD9 /* LocationHandlerPermissionTests.swift */; };
 		077B35411F7BA9DD0000282F /* LocationHandlerRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA74A291E3752F90014BD82 /* LocationHandlerRequestTests.swift */; };
 		077B35421F7BAF2B0000282F /* LocationServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F44F4E71E379C3E000BBC4E /* LocationServiceTests.swift */; };
-		4F3399B51E3A0AD5002634E5 /* LocationResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F44F4DC1E376D31000BBC4E /* LocationResult.swift */; };
 		4F3399B91E3A0C05002634E5 /* LocationAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F44F4DE1E37770C000BBC4E /* LocationAccess.swift */; };
 		4F44F4D21E376C2F000BBC4E /* MockLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F44F4D11E376C2F000BBC4E /* MockLocationManager.swift */; };
 		4F44F4E11E37775D000BBC4E /* LocationAccessTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F44F4E01E37775D000BBC4E /* LocationAccessTests.swift */; };
@@ -41,7 +40,6 @@
 		077B353E1F7B955B0000282F /* LocationHandlerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationHandlerTests.swift; sourceTree = "<group>"; };
 		4F44F4D11E376C2F000BBC4E /* MockLocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockLocationManager.swift; sourceTree = "<group>"; };
 		4F44F4DA1E376CB8000BBC4E /* CLLocationCoordinate2D+Equatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CLLocationCoordinate2D+Equatable.swift"; sourceTree = "<group>"; };
-		4F44F4DC1E376D31000BBC4E /* LocationResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationResult.swift; sourceTree = "<group>"; };
 		4F44F4DE1E37770C000BBC4E /* LocationAccess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationAccess.swift; sourceTree = "<group>"; };
 		4F44F4E01E37775D000BBC4E /* LocationAccessTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationAccessTests.swift; sourceTree = "<group>"; };
 		4F44F4E21E377DF6000BBC4E /* LocationManagerType+Mocks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LocationManagerType+Mocks.swift"; sourceTree = "<group>"; };
@@ -122,7 +120,6 @@
 				4F9DE3D81E365F49009013B4 /* Info.plist */,
 				4F9DE3D71E365F49009013B4 /* Spot.h */,
 				4F44F4DE1E37770C000BBC4E /* LocationAccess.swift */,
-				4F44F4DC1E376D31000BBC4E /* LocationResult.swift */,
 				4F44F4E51E3797C5000BBC4E /* LocationService.swift */,
 				077B353C1F7B90FC0000282F /* LocationHandler.swift */,
 			);
@@ -305,7 +302,6 @@
 			files = (
 				077B353D1F7B90FC0000282F /* LocationHandler.swift in Sources */,
 				4F3399B91E3A0C05002634E5 /* LocationAccess.swift in Sources */,
-				4F3399B51E3A0AD5002634E5 /* LocationResult.swift in Sources */,
 				4F44F4E61E3797C5000BBC4E /* LocationService.swift in Sources */,
 				4F44F4E41E378D2D000BBC4E /* CLLocationCoordinate2D+Equatable.swift in Sources */,
 			);
