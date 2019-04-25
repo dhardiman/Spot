@@ -9,12 +9,12 @@
 import CoreLocation
 import Foundation
 
-public typealias LocationCompletion = ((LocationResult<CLLocationCoordinate2D, LocationRequestError>) -> Void)
+public typealias LocationCompletion = ((Result<CLLocationCoordinate2D, LocationRequestError>) -> Void)
 
-public protocol LocationHandling: class {
+public protocol LocationHandling: AnyObject {
     func requestLocation(_ completion: @escaping LocationCompletion)
     func cancelCurrentRequest()
-    var didChangeAuthorizationStatus: ((LocationResult<Void, LocationPermissionError>) -> Void)? { get set }
+    var didChangeAuthorizationStatus: ((Result<Void, LocationPermissionError>) -> Void)? { get set }
 }
 
 // MARK: - CLLocationManagerDelegate
@@ -26,7 +26,7 @@ class LocationHandler: NSObject, LocationHandling, CLLocationManagerDelegate {
     let locationAccess: LocationAccess
 
     /// Closure called when authorization status changes
-    var didChangeAuthorizationStatus: ((LocationResult<Void, LocationPermissionError>) -> Void)?
+    var didChangeAuthorizationStatus: ((Result<Void, LocationPermissionError>) -> Void)?
 
     init(locationManager: LocationManaging, locationAccess: LocationAccess = LocationAccess()) {
         self.locationManager = locationManager
@@ -103,6 +103,8 @@ class LocationHandler: NSObject, LocationHandling, CLLocationManagerDelegate {
             requestLocationCompletion = nil
         case .notDetermined:
             // Not determined is the initial state and is not used for observing changes to the authorization status
+            break
+        @unknown default:
             break
         }
     }

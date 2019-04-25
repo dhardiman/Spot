@@ -22,7 +22,7 @@ class MockLocationHandler: LocationHandling {
         receivedCancel = true
     }
 
-    var didChangeAuthorizationStatus: ((LocationResult<Void, LocationPermissionError>) -> Void)?
+    var didChangeAuthorizationStatus: ((Result<Void, LocationPermissionError>) -> Void)?
 }
 
 class LocationServiceTests: XCTestCase {

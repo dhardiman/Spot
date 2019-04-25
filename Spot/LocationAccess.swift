@@ -8,7 +8,7 @@
 
 import CoreLocation
 
-public protocol AuthorizationManaging: class {
+public protocol AuthorizationManaging: AnyObject {
     static func locationServicesEnabled() -> Bool
     static func authorizationStatus() -> CLAuthorizationStatus
 }
@@ -59,6 +59,8 @@ open class LocationAccess {
             return false
         case .authorizedAlways, .authorizedWhenInUse:
             return true
+        @unknown default:
+            return false
         }
     }
 }

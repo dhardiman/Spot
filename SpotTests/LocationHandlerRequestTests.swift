@@ -26,7 +26,7 @@ extension LocationHandlerTests {
     }
 
     func testLocationRequestDoesNotCallBackIfCancelled() {
-        var receivedResult: LocationResult<CLLocationCoordinate2D, LocationRequestError>?
+        var receivedResult: Result<CLLocationCoordinate2D, LocationRequestError>?
         handler.requestLocation { result in
             receivedResult = result
         }
@@ -37,22 +37,22 @@ extension LocationHandlerTests {
 
     func testLocationRequestDoesNotCallRequestWhenLocationServicesDisabled() {
         MockLocationManager.isLocationServicesEnabled = false
-        var receivedResult: LocationResult<CLLocationCoordinate2D, LocationRequestError>?
+        var receivedResult: Result<CLLocationCoordinate2D, LocationRequestError>?
         handler.requestLocation { result in
             receivedResult = result
         }
-        expect(receivedResult!.error()).to(equal(LocationRequestError.locationDisabled))
+        expect(receivedResult!.error).to(equal(LocationRequestError.locationDisabled))
         expect(self.mockLocationManager.requestLocationCallCount).to(equal(0))
     }
 
     func testLocationRequestDoesNotCallRequestLocationWhenLocationServicesDenied() {
         MockLocationManager.currentAuthorizationStatus = .denied
-        var receivedResult: LocationResult<CLLocationCoordinate2D, LocationRequestError>?
+        var receivedResult: Result<CLLocationCoordinate2D, LocationRequestError>?
         handler.requestLocation { result in
             receivedResult = result
         }
         whenLocationPermissionIsReceived(withStatus: .denied)
-        expect(receivedResult!.error()).to(equal(LocationRequestError.locationDenied))
+        expect(receivedResult!.error).to(equal(LocationRequestError.locationDenied))
         expect(self.mockLocationManager.requestLocationCallCount).to(equal(0))
     }
 
@@ -62,31 +62,40 @@ extension LocationHandlerTests {
     }
 
     func testLocationManagerDidUpdateLocationCallsBackWithErrorWhenNoLocationsAreReturned() {
-        var receivedResult: LocationResult<CLLocationCoordinate2D, LocationRequestError>?
+        var receivedResult: Result<CLLocationCoordinate2D, LocationRequestError>?
         handler.requestLocation { result in
             receivedResult = result
         }
         handler.locationManager(actualLocationManager, didUpdateLocations: [])
-        expect(receivedResult!.error()).to(equal(LocationRequestError.locationUnknown))
+        expect(receivedResult!.error).to(equal(LocationRequestError.locationUnknown))
     }
 
     func testLocationManagerDidUpdateLocationCallsBackWithLocationOnSuccess() {
-        var receivedResult: LocationResult<CLLocationCoordinate2D, LocationRequestError>?
+        var receivedResult: Result<CLLocationCoordinate2D, LocationRequestError>?
         handler.requestLocation { result in
             receivedResult = result
         }
         let location = whenALocationIsReturned()
-        expect(receivedResult!.successResult()).to(equal(location.coordinate))
+        expect(try? receivedResult!.get()).to(equal(location.coordinate))
     }
 
     func testLocationManagerDidFailWithErrorCallsBackForwardingError() {
         let mockedError = LocationRequestError.locationUnknown
-        var receivedResult: LocationResult<CLLocationCoordinate2D, LocationRequestError>?
+        var receivedResult: Result<CLLocationCoordinate2D, LocationRequestError>?
         handler.requestLocation { result in
             receivedResult = result
         }
         handler.locationManager(actualLocationManager, didFailWithError: mockedError)
-        expect(receivedResult!.error()).to(equal(mockedError))
+        expect(receivedResult!.error).to(equal(mockedError))
+    }
+}
+
+extension Result {
+    var error: Failure? {
+        if case let .failure(error) = self {
+            return error
+        }
+        return nil
     }
 }
 
