@@ -59,6 +59,8 @@ open class LocationAccess {
             return false
         case .authorizedAlways, .authorizedWhenInUse:
             return true
+        @unknown default:
+            return false
         }
     }
 }

@@ -104,6 +104,8 @@ class LocationHandler: NSObject, LocationHandling, CLLocationManagerDelegate {
         case .notDetermined:
             // Not determined is the initial state and is not used for observing changes to the authorization status
             break
+        @unknown default:
+            break
         }
     }
 }
