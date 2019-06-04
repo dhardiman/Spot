@@ -18,6 +18,7 @@ public protocol LocationManaging: AuthorizationManaging {
 
     var delegate: CLLocationManagerDelegate? { get set }
 
+    @available(iOS 9, *)
     func requestLocation()
 
     func requestWhenInUseAuthorization()

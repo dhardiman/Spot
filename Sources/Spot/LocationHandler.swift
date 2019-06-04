@@ -8,6 +8,7 @@
 
 import CoreLocation
 import Foundation
+import UIKit
 
 public typealias LocationCompletion = ((Result<CLLocationCoordinate2D, LocationRequestError>) -> Void)
 
