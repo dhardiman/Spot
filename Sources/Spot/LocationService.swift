@@ -58,6 +58,7 @@ public protocol LocationReporting {
 }
 
 /// The operation context to use get a user location
+@available(iOS 9, *)
 public class LocationService: LocationReporting {
     private let locationManager: CLLocationManager
 

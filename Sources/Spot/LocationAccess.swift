@@ -28,7 +28,6 @@ extension CLLocationManager: LocationManaging {}
 
 /// Proxy object to access enabled and authorization status of CLLocationManager,
 /// open for creating mocks through subclassing
-@available(iOS 9, *)
 open class LocationAccess {
     public convenience init() {
         self.init(authorizationManagerType: CLLocationManager.self)

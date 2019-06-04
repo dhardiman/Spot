@@ -20,6 +20,7 @@ public protocol LocationHandling: AnyObject {
 
 // MARK: - CLLocationManagerDelegate
 
+@available(iOS 9, *)
 class LocationHandler: NSObject, LocationHandling, CLLocationManagerDelegate {
     private var requestLocationCompletion: LocationCompletion?
 
