@@ -123,7 +123,8 @@
 				4F44F4E51E3797C5000BBC4E /* LocationService.swift */,
 				077B353C1F7B90FC0000282F /* LocationHandler.swift */,
 			);
-			path = Spot;
+			name = Spot;
+			path = Sources/Spot;
 			sourceTree = "<group>";
 		};
 		4F9DE3E11E365F49009013B4 /* SpotTests */ = {
@@ -139,7 +140,8 @@
 				4F44F4E71E379C3E000BBC4E /* LocationServiceTests.swift */,
 				077B353E1F7B955B0000282F /* LocationHandlerTests.swift */,
 			);
-			path = SpotTests;
+			name = SpotTests;
+			path = Tests/SpotTests;
 			sourceTree = "<group>";
 		};
 		4FADF14C1E3671CD004486D9 /* Frameworks */ = {
@@ -407,7 +409,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_SEARCH_PATHS = "";
-				INFOPLIST_FILE = Spot/Info.plist;
+				INFOPLIST_FILE = Sources/Spot/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -428,7 +430,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/Carthage/Build/iOS";
-				INFOPLIST_FILE = SpotTests/Info.plist;
+				INFOPLIST_FILE = Tests/SpotTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -571,7 +573,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_SEARCH_PATHS = "";
-				INFOPLIST_FILE = Spot/Info.plist;
+				INFOPLIST_FILE = Sources/Spot/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -597,7 +599,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_SEARCH_PATHS = "";
-				INFOPLIST_FILE = Spot/Info.plist;
+				INFOPLIST_FILE = Sources/Spot/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -616,7 +618,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/Carthage/Build/iOS";
-				INFOPLIST_FILE = SpotTests/Info.plist;
+				INFOPLIST_FILE = Tests/SpotTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -634,7 +636,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/Carthage/Build/iOS";
-				INFOPLIST_FILE = SpotTests/Info.plist;
+				INFOPLIST_FILE = Tests/SpotTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
